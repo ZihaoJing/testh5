@@ -166,15 +166,17 @@ li {
     padding: 32px 0px 0px 0px;
     border-radius: 300px 300px 180px 210px;
 }
-.se{
-    height: 70px;
-    width: 150px;
-    border: 5px solid  rgb(255, 255, 255);
-background-color: rgb(241, 156, 220);
-padding-top: 35px;
+.ses{
+    height: 170px;
+    width: 50px;
+    border: 5px solid  rgb(167, 229, 245);
+background-color: rgb(250, 177, 177);
+padding-bottom:35 px;
 font-size: 15px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(245, 97, 213);
+    color: #ffffff;
+margin: 30px;
+border-radius: 300px 300px 180px 210px;
 
 }
 p{
@@ -196,94 +198,8 @@ p{
     left: 95px;
 }
 
-
-.se {
-
-    min-height: 1.5em;
+#se{
+    background: rgb(241, 163, 248);
+    color: #020202;
     
-    display: inline-block;
-    
-    padding: 12px 36px;
-    
-    margin: 40px 5px 5px 0px;
-    
-    cursor: pointer;
-    
-    opacity: 0.9;
-    
-    color: #FFF;
-    
-    font-size: 1em;
-    
-    letter-spacing: 1px;
-    
-    /* X轴偏移1像素、Y轴偏移2像素、不透明度为0.9的黑色文本阴影 */
-    
-    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
-    
-    background: #434343;
-    
-    border: 1px solid #242424;
-    
-    border-radius: 4px;
-    
-    /*
-    
-    使用多层阴影实现按钮立体效果
-    
-    第一层：Y轴偏移1像素、不透明度为0.25的白色外阴影效果
-    
-    第二层：Y轴偏移1像素、不透明度为0.25的白色内阴影效果
-    
-    第三层：偏移位0、不透明度为0.25的黑色外阴影效果
-    
-    第四层：Y轴偏移20像素、不透明度为0.03的白色内阴影效果
-    
-    第五层：X轴偏移-20像素、Y轴偏移20像素、不透明度为0.15的黑色内阴影效果
-    
-    第六层：X轴偏移20像素、Y轴偏移20像素、不透明度为0.05的白色内阴影效果
-    
-    */
-    
-    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-    
-    /* 让变化的属性在100毫秒内匀速过渡 */
-    
-    transition: all 0.1s linear; } .button:hover {
-    
-    /*
-    
-    鼠标悬停时的按钮多层阴影效果，和按钮默认时相比只是第一层有变化：
-    
-    第一层：X轴偏移2像素、Y轴偏移5像素、不透明度为0.5的黑色外阴影效果
-    
-    */
-    
-    box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px; } .shine {
-    
-    display: block;
-    
-    position: relative;
-    
-    /* IE下面使用滤镜实现渐变效果 */
-    
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
-    
-    /* 使用水平的线性渐变实现按钮顶部的关泽效果 */
-    
-    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-    
-    padding: 0px 12px;
-    
-    top: -12px;
-    
-    left: -24px;
-    
-    height: 1px;
-    
-    box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
-    
-    /* 让变化的属性在300毫秒内以ease-in-out（先加速后减速）方式过渡 */
-    
-    transition: all 0.3s ease-in-out; }
-    
+}

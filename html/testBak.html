@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/clear.css">
+    <link rel="stylesheet" href="../css/testCSS.css">
+
+    <title>DtBAK</title>
+</head>
+
+<body>
+
+    <div id="divc">
+        <ul class="ul1" id="ul11">
+
+        </ul>
+        <ul class="ul2">
+
+        </ul>
+
+
+        <ul class="ul3" id="ul33">
+<li>/ʃ/</li>
+<li>/ɑ/</li>
+<li>/θ/</li>
+<li>/z/</li>
+<li>/s/</li>
+<li>/v/</li>
+<li>/f/</li>
+<li>/g/</li>
+<li>/k/</li>
+<li>/d/</li>
+<li>/t/</li>
+<li>/b/</li>
+<li>/p/</li>
+<li>/空缺/</li>
+<li>/l/</li>
+<li>/ŋ/</li>
+<li>/n/</li>
+<li>/m/</li>
+<li>/dʒ/</li>
+<li>/tʃ/</li>
+<li>/ʒ/</li>
+        </ul>
+
+
+        <div id="kco">
+            <div class="d1"></div>
+            <ul id="d2">
+
+                <p></p>
+                <p></p>
+                <p></p>
+            </ul>
+        </div>
+    </div>
+  <div id="start" class="se" onclick="start()">开始</div>
+  <div id="end" class="se" onclick="end()">停止</div>
+    <script type="text/javascript">
+
+var arr = ["A", "B", "C", "D", "E", "F"];
+        // var p = document.getElementsByTagName("li");
+        // 
+        // var setTime1=setInterval(
+        //     function () {
+        //         for (var i = 0; i <= p.length - 1; i++) {
+        //             var index = Math.floor((Math.random() * arr.length))
+        //             p[i].innerText = arr[index];
+        //         }
+        //     }, 1000);
+
+        for(i=0;i<21;i++){
+            
+            li3[i].onclick=function(){
+            ul3Onlick(i);
+        };
+        }
+        
+     
+function ul3Onlick(i){
+    var start = li3[i].getElementsByTagName("audio");
+    start[0].play();
+
+     }     var ul1 = document.querySelector(".ul1");
+        for (var i = 0; i < 21; i++) {
+            var li = document.createElement("li");
+            li.style.transform = 'rotate(' + i * 17 + 'deg)';
+            ul1.appendChild(li);
+        }
+
+        var ul2 = document.querySelector(".ul2");
+        for (var i = 0; i < 21; i++) {
+            var li = document.createElement("li");
+            li.style.transform = 'rotate(' + i * 17 + 'deg)';
+            ul2.appendChild(li);
+        }
+
+      //  var ul3 = document.querySelector(".ul3");
+var ul3=document.getElementsByClassName("ul3");
+var li=ul3[0].getElementsByTagName("li");
+        for (var i = 0; i < 21; i++) {
+            //var li = document.createElement("li");
+            
+           li[i].style.transform = 'rotate(' + i * 17 + 'deg)';
+          //  ul3.appendChild(li);
+        }
+
+        var p2 = document.getElementsByTagName("p");
+        var arr1 = ["A", "B", "C", "D", "E", "F"];
+       var setTime2= setInterval(
+            function () {
+                for (var i = 0; i <= p2.length - 1; i++) {
+                    var index = Math.floor((Math.random() * arr1.length))
+                    p2[i].innerText = arr[index];
+                }
+            }, 1000)
+        var divc = document.getElementById("divc");
+        function start(){
+            //window.location.reload();
+            ul33.style.animationPlayState="running"
+        }
+        function end() {
+           var ul33= document.getElementById("ul33");
+       ul33.style.animationPlayState="paused";
+            // var declaration1 = document.styleSheets[1].cssRules[2].style;
+            // declaration1.removeProperty("animation");
+            
+            // var declaration2 = document.styleSheets[1].cssRules[4].style;
+            // declaration2.removeProperty("animation");
+
+            // var declaration3 = document.styleSheets[1].cssRules[5].style;
+            // declaration3.removeProperty("animation");
+
+            // var declaration4 = document.styleSheets[1].cssRules[6].style;
+            // declaration4.removeProperty("animation");
+            // clearInterval(setTime1);
+            // clearInterval(setTime2);
+            
+        };
+            var ul11 = document.getElementById("ul1");
+
+            //ul11.removeProperty("border");
+            setInterval(function () {
+                //  ul11.style.animation = "ease-out 2s"
+                // ul11.style.animationPlayState="paused";
+                var element;
+                var li = document.getElementsByTagName("li")
+                // while (li.length > 0) {
+                //     element = li[0];
+                //     //  element.parentElement.removeChild(element);
+
+                // }
+                // for (i = 0; i < li.length - 1; i++) {
+                //     var img = document.createElement('img');//创建一个标签
+                //     img.setAttribute("src", "../img/juzi.webp");//给标签定义src链接
+                //     element = li[i];
+                //    // element.appendChild(img);//放到指定的id里
+                // }
+            }, 2000)
+
+
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/clear.css">
     <link rel="stylesheet" href="../css/testCSS.css">
-
+    
+    <script src="../js/jquery-1.11.0.min.js"  type="text/javascript"></script>
+    <script src="../js/propeller.js"  type="text/javascript"></script>
+    <script type="text/javascript" src="../js/propeller.min.js"></script>
     <title>Dt</title>
 </head>
 <!-- onmousedown="screenzb(event)" -->
@@ -13,7 +16,7 @@
 <body>
 
     <div id="divc">
-        <ul class="ul1" id="ul11">
+        <ul class="ul1" id="idul1">
             <li>/tʃ/
                 <audio src="../mp3/tss.mp3">
                 </audio>
@@ -111,7 +114,7 @@
                 </audio>
             </li>
         </ul>
-        <ul class="ul2">
+        <ul class="ul2" id="idul2">
             <li>/aʊ/
                 <audio src="../mp3/ao.mp3">
                 </audio>
@@ -196,7 +199,7 @@
         </ul>
 
 
-        <ul class="ul3" id="ul33">
+        <ul class="ul3" id="idul3">
             <li>/ʃ/
                 <audio src="../mp3/ss.mp3">
                 </audio>
@@ -287,24 +290,24 @@
         <div id="kco">
             <div class="d1"></div>
             <ul id="d2">
-
-                <p></p>
-                <p></p>
-                <p></p>
+                <p id="p1"></p>
+                <p id="p2"></p>
+                <p id="p3"></p>
+                <button onclick="end()" class="ses" id="se">播放</button>
             </ul>
         </div>
     </div>
     <div id="divse">
-    <!-- <div id="start" class="se"  onclick="start()">开始</div>
+        <!-- <div id="start" class="se"  onclick="start()">开始</div>
     <div id="end" class="se"  onclick="end()">停止</div> -->
-    <button onclick="start()" class="ses">开始</button>
-    <button onclick="end()" class="ses" id="se">停止</button>
-</div>
-<div id="img">
-    <img src="../img/kat.png" alt="">
-</div>
-<p>使用说明</p>
-<p>默认是开始状态，也就是转动状态，点击停止时，会将中间指针上的三个音标进行播放，也可以单独点击某一个音标进行发音</p>
+        <!-- <button onclick="start()" class="ses">开始</button> -->
+       
+    </div>
+    <div id="img">
+        <img src="../img/kat.png" alt="" id="imgs">
+    </div>
+    <p>使用说明</p>
+    <p>默认是开始状态，也就是转动状态，点击停止时，会将中间指针上的三个音标进行播放，也可以单独点击某一个音标进行发音</p>
 
     <script type="text/javascript">
         //================测试====================
@@ -393,50 +396,61 @@
             li3[i].style.transform = 'rotate(' + i * 17 + 'deg)';
         }
         //==============================控制==============================================
+        var obtain1 = "";
+        var obtain2 = "";
+        var obtain3 = "";
         window.onload = function () {
             setInterval(function () {
-                var obtain1 = document.elementFromPoint(362, 159);
-                var obtain2 = document.elementFromPoint(360, 185);
-                var obtain3 = document.elementFromPoint(361, 259);
+                obtain1 = document.elementFromPoint(155, 374);
+                obtain2 = document.elementFromPoint(177, 374);
+                obtain3 = document.elementFromPoint(230, 374);
+                
 
-
+                var p1 = document.getElementsByTagName("p")[0];
+                var p2 = document.getElementsByTagName("p")[1];
+                var p3 = document.getElementsByTagName("p")[2];
                 if (obtain1.innerText.length < 7) {
 
-                    var p1 = document.getElementsByTagName("p")[0];
                     p1.innerText = '';
                     p1.innerText = obtain1.innerText;
 
 
+                }else{
+                    p1.innerText = '';
                 }
                 if (obtain2.innerText.length < 7) {
-                    var p2 = document.getElementsByTagName("p")[1];
+                    
                     p2.innerText = '';
                     p2.innerText = obtain2.innerText;
 
 
+                }else{
+                    p2.innerText = '';
                 }
                 if (obtain3.innerText.length < 7) {
-                    var p3 = document.getElementsByTagName("p")[2];
+                    
                     p3.innerText = '';
                     p3.innerText = obtain3.innerText;
 
 
+                }else{
+                    p3.innerText = '';
                 }
 
             }, 322);
         }
 
 
-        function start() {
-            ul3[0].style.animationPlayState = "running";
-            ul2[0].style.animationPlayState = "running";
-            ul1[0].style.animationPlayState = "running";
+        // function start() {
+        //     ul3[0].style.animationPlayState = "running";
+        //     ul2[0].style.animationPlayState = "running";
+        //     ul1[0].style.animationPlayState = "running";
 
-        }
+        // }
         function end() {
-            var obtain1 = document.elementFromPoint(362, 159);
-            var obtain2 = document.elementFromPoint(360, 185);
-            var obtain3 = document.elementFromPoint(361, 259);
+            // var obtain1 = document.elementFromPoint(155, 374);
+            // var obtain2 = document.elementFromPoint(177, 374);
+            // var obtain3 = document.elementFromPoint(230, 374);
             //  var ul33 = document.getElementById("ul33");
             ul3[0].style.animationPlayState = "paused";
             ul2[0].style.animationPlayState = "paused";
@@ -444,23 +458,23 @@
             var audio1 = obtain1.getElementsByTagName("audio");
             var audio2 = obtain2.getElementsByTagName("audio");
             var audio3 = obtain3.getElementsByTagName("audio");
-            if (obtain1.getElementsByTagName("li")) {
+            if (obtain1.getElementsByTagName("li")&&audio1.length<15) {
                 try {
-                audio1[0].play();
-                obtain1 = null;
-                audio1 = null;
-            }
+                    audio1[0].play();
+                    obtain1 = null;
+                    audio1 = null;
+                }
                 catch (e) {
 
                 }
             }
-            if (obtain2.getElementsByTagName("li")) {
+            if (obtain2.getElementsByTagName("li") &&audio2.length<15) {
                 try {
                     setTimeout(function () {
                         audio2[0].play();
                         obtain2 = null;
                         audio2 = null;
-                    }, 2000);
+                    }, 2500);
                 }
                 catch (e) {
 
@@ -468,14 +482,14 @@
 
 
             }
-            if (obtain3.getElementsByTagName("li")) {
+            if (obtain3.getElementsByTagName("li") &&audio3.length<15) {
                 try {
-                setTimeout(function () {
-                    audio3[0].play();
-                    obtain3 = null;
-                    audio3 = null;
-                }, 3500);
-            }
+                    setTimeout(function () {
+                        audio3[0].play();
+                        obtain3 = null;
+                        audio3 = null;
+                    }, 5000);
+                }
                 catch (e) {
 
                 }
@@ -483,13 +497,56 @@
             }
 
         };
+        // (function(){
+        //     var container = $$("ul11");
+        //    alert("222");
+        // $$("ul11").onclick = function () {
+        //     container.vertical();
+        // }
 
+        // })
 
+     $('#idul1').propeller({inertia: 0, speed: 0});
+     $('#idul2').propeller({inertia: 0, speed: 0});
+     $('#idul3').propeller({inertia: 0, speed: 0});
 
-
-
-
-
+    
+        $('#p1').click(function (){
+            try {
+              obtain1.children[0].play();
+            }catch (e) {
+               
+            }
+            // var audio1 = obtain1.getElementsByTagName("audio");
+        
+            // if (obtain1.getElementsByTagName("li")) {
+                
+            //         audio1[0].play();
+            //         obtain1 = null;
+            //         audio1 = null;
+                
+            // }
+        });
+        $('#p2').click(function (){
+            // 
+           
+            try {
+                obtain2.children[0].play();
+            }catch (e) {
+               
+            }
+        
+          
+        });
+        $('#p3').click(function (){
+            // 
+            try {
+                obtain3.children[0].play();
+            }catch (e) {
+            } 
+        });
+     
+     
     </script>
 </body>
 
